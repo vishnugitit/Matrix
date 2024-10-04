@@ -1,3 +1,30 @@
 <script>
-    
+  rows = +prompt("enter rows :");
+  cols = +prompt("enter cols :");
+  m = [];
+  for (i = 1; i <= rows; i++) {
+    x = [];
+    for (j = 1; j <= cols; j++) {
+      //console.log("enter "+i+""+j+" element :");
+      ele = prompt("enter " + i + "" + j + " element :");
+      x.push(ele);
+    }
+    m.push(x);
+  }
+  for (i of m) {
+    console.log(i.join(" "));
+  }
+  (temp = []), (y = []);
+  for (i = 0; i < rows; i++) {
+    res = "";
+    for (j = 0; j < rows; j++) {
+      if (i == j) {
+        temp.push(m[i][j]);
+      }
+      if (i + j == rows - 1) {
+        y.push(m[i][j]);
+      }
+    }
+  }
+  alert("diagonal elements are:" + temp.join(" ") + " " + y.join(" "));
 </script>
