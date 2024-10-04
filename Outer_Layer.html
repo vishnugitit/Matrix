@@ -1,3 +1,23 @@
 <script>
-    
+  rows = +prompt("enter rows :");
+  cols = +prompt("enter cols :");
+  m = [];
+  for (i = 1; i <= rows; i++) {
+    x = [];
+    for (j = 1; j <= cols; j++) {
+      ele = prompt("enter " + i + "" + j + " element :");
+      x.push(ele);
+    }
+    m.push(x);
+  }
+  temp = [];
+  for (i = 0; i < rows; i++) {
+    res = "";
+    for (j = 0; j < rows; j++) {
+      if (i == 0 || i == rows - 1 || j == 0 || j == cols - 1) {
+        temp.push(m[i][j]);
+      }
+    }
+  }
+  alert("outer layer elements:" + temp.join(" "));
 </script>
